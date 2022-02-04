@@ -1,0 +1,15 @@
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/bin/Debug/net5.0/Hack IL Compiler.deps.json
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/bin/Debug/net5.0/Hack IL Compiler.runtimeconfig.json
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/bin/Debug/net5.0/Hack IL Compiler.runtimeconfig.dev.json
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/bin/Debug/net5.0/Hack IL Compiler.dll
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/bin/Debug/net5.0/ref/Hack IL Compiler.dll
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/bin/Debug/net5.0/Hack IL Compiler.pdb
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/Hack IL Compiler.csprojAssemblyReference.cache
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/Hack IL Compiler.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/Hack IL Compiler.AssemblyInfoInputs.cache
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/Hack IL Compiler.AssemblyInfo.cs
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/Hack IL Compiler.csproj.CoreCompileInputs.cache
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/Hack IL Compiler.dll
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/ref/Hack IL Compiler.dll
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/Hack IL Compiler.pdb
+/Users/nicky/RiderProjects/Hack IL Compiler/Hack IL Compiler/obj/Debug/net5.0/Hack IL Compiler.genruntimeconfig.cache

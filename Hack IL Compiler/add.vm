@@ -1,0 +1,25 @@
+// push args (is done before call)
+
+
+// CALL implementation:
+// save/push ret$main.add, LCL, ARG, THIS, THAT.
+// set arg pointer to stack pointer -5 - num_args
+// set LCL to SP
+call Main.add 2
+(ret$main.add_<labels++>) // <--- where the program flow should continue after the call.
+
+
+// function implementation:
+// set label for the function
+// (Main.add)
+function Main.add 2
+...
+
+
+
+
+
+// pop THAT, THIS, ARG, LCL,
+
+// set SP to LCL
+return
