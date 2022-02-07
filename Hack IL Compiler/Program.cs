@@ -54,7 +54,7 @@ namespace Hack_IL_Compiler
 
         static int labels = 0;
 
-        static string[] ParseVM(string line)
+        static string[] ParseVM(string file, string line)
         {
             // push     \t\t        constant           2
             // commands[0] = "push"
@@ -209,7 +209,7 @@ namespace Hack_IL_Compiler
                 if (segment == "static")
                 {
                     // @16 + <offset>
-                    var addressToReach = (16 + value);
+                    // var addressToReach = (16 + value);
 
                     return new string[]
                     {
@@ -218,7 +218,7 @@ namespace Hack_IL_Compiler
                         "AM=M-1",
                         "D=M",
                         // Place value on the address
-                        $"@{addressToReach}",
+                        $"@{file}.{value}",
                         "M=D",
                     };
                 }
@@ -368,11 +368,11 @@ namespace Hack_IL_Compiler
                 if (segment == "static")
                 {
                     // @16 + <offset>
-                    var addressToReach = (16 + value);
+                    // var addressToReach = (16 + value);
 
-                    return new string[]
+                    return new string[]   
                     {
-                        $"@{addressToReach}",
+                        $"@{file}.{value}",
                         "D=M",
                         // Standard put value into stack
                         "@SP",
@@ -830,7 +830,7 @@ namespace Hack_IL_Compiler
 
         static void Main(string[] args)
         {
-            var folderPath = "FibonacciElement";
+            var folderPath = "StaticsTest";
             var path = "/Users/nicky/Desktop/H5/nand2tetris/projects/08/FunctionCalls/" + folderPath;
             // Test "push constant x" and "add"
             var outfilename = path + "/" + folderPath + ".asm";
@@ -838,7 +838,8 @@ namespace Hack_IL_Compiler
             // Test "eq"
             //var inFile = "/Users/nicky/Desktop/H5/nand2tetris/projects/07/custom/eq.vm";
             // var inFiles = new string[] {inFile};
-            var inFiles = System.IO.Directory.GetFiles(path, "*.vm");
+            var inFilesNames = System.IO.Directory.GetFiles(path, "*.vm");
+            
 
             // var outFile = Path.ChangeExtension(inFile, "asm");
             List<string> outputLines = new List<string>();
@@ -852,17 +853,23 @@ namespace Hack_IL_Compiler
                 "M=D",
             });
 
-            outputLines.AddRange(ParseVM("call Sys.init 0"));
+            outputLines.AddRange(ParseVM("bootstrap.vm", "call Sys.init 0"));
             
-            foreach (var file in inFiles)
+            foreach (var fileName in inFilesNames)
             {
-                string[] lines = File.ReadAllLines(file);
+                // Fucking Linux.
+                string underscoreFileName = fileName.Replace('/', '_');
+
+                // Fucking Windows.
+                underscoreFileName = underscoreFileName.Replace('\\', '_');
+                // read all the lines from file with fileName as name
+                string[] lines = File.ReadAllLines(fileName);
                 lines = RemoveComments(lines);
 
                 foreach (var line in lines)
                 {
                     outputLines.Add("// " + line); 
-                    outputLines.AddRange(ParseVM(line));
+                    outputLines.AddRange(ParseVM(underscoreFileName, line));
                 }
             }
 
