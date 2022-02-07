@@ -862,7 +862,7 @@ namespace Hack_IL_Compiler
 
                 // Fucking Windows.
                 underscoreFileName = underscoreFileName.Replace('\\', '_');
-                // read all the lines from file with fileName as name
+
                 string[] lines = File.ReadAllLines(fileName);
                 lines = RemoveComments(lines);
 
