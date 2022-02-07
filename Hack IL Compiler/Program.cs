@@ -830,10 +830,9 @@ namespace Hack_IL_Compiler
 
         static void Main(string[] args)
         {
-            var folderPath = "NestedCall";
+            var folderPath = "FibonacciElement";
             var path = "/Users/nicky/Desktop/H5/nand2tetris/projects/08/FunctionCalls/" + folderPath;
             // Test "push constant x" and "add"
-            var inFile = path + "/Sys.vm";
             var outfilename = path + "/" + folderPath + ".asm";
 
             // Test "eq"
@@ -846,19 +845,18 @@ namespace Hack_IL_Compiler
 
             // Boostrap / Sys.init
             outputLines.AddRange(new string[] {  
-              "// bootstrap",
-              "@256",
-              "D=A",
-              "@SP",
-              "M=D",
+                "// bootstrap",
+                "@256",
+                "D=A",
+                "@SP",
+                "M=D",
             });
 
             outputLines.AddRange(ParseVM("call Sys.init 0"));
             
             foreach (var file in inFiles)
             {
-                var outFilename = Path.ChangeExtension(file, "asm");
-                string[] lines = File.ReadAllLines(inFile);
+                string[] lines = File.ReadAllLines(file);
                 lines = RemoveComments(lines);
 
                 foreach (var line in lines)
